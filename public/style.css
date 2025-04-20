@@ -1,0 +1,242 @@
+/* Body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* Default Light Mode */
+    color: #111; /* Default Light Mode text color */
+    margin: 0;
+    padding: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Added color transition */
+  }
+  @font-face {
+    font-family: 'RaceSport';
+    src: url('./fonts/Race\ Sport.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  #title{
+    font-family: 'RaceSport';
+    src: url('./fonts/Race\ Sport.ttf') format('truetype');
+  }
+  /* Search Bar Container */
+  .search-bar {
+    display: flex;
+    font-family: 'RaceSport';
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  #search-input{
+    font-family: 'RaceSport';
+    src: url(./fonts/Race\ Sport.ttf) format('truetype');
+  }
+  .input-container {
+    position: relative;
+    width: 60%;
+  }
+  
+  #search-input {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #fff; /* Default Light Mode */
+    border: none;
+    border-radius: 25px;
+    color: #111;
+    font-size: 16px;
+    transition: 0.3s ease-out;
+  }
+  
+  #search-input:focus {
+    outline: none;
+    background-color: #f1f1f1;
+    box-shadow: 0 0 10px rgba(0, 204, 255, 0.6); /* Glowing effect */
+  }
+  
+  label {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    color: #999;
+    font-size: 16px;
+    transition: 0.3s ease;
+  }
+  
+  #search-input:focus + label,
+  #search-input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 20px;
+    color: #00ccff;
+    font-size: 12px;
+  }
+  
+  /* Search Button */
+  #search-btn {
+    position: relative;
+    padding: 10px 10px;
+    background: linear-gradient(135deg, #00ccff, #0077b6);
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 204, 255, 0.4);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    z-index: 0;
+  }
+  
+  #search-btn::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(0, 255, 255, 0.4), transparent 40%);
+    transform: rotate(25deg);
+    transition: opacity 0.5s;
+    z-index: -1;
+    opacity: 0;
+  }
+  
+  #search-btn:hover::before {
+    opacity: 1;
+  }
+  
+  #search-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 204, 255, 0.6);
+  }
+  
+  #search-btn:active {
+    transform: scale(0.96);
+  }
+  
+  
+  /* Dark Mode Styles */
+  body.dark-mode {
+    background-color: #111; /* Dark background */
+    color: #f4f4f4; /* Light text */
+  }
+  
+  body.dark-mode .search-bar {
+    background-color: #111; /* Dark search bar */
+    color: #f4f4f4; /* Light text */
+  }
+  
+  body.dark-mode #search-input {
+    background-color: #222; /* Dark input field */
+    color: #f4f4f4; /* Light text */
+    border: 1px solid #444; /* Dark border */
+  }
+  
+  body.dark-mode #search-btn {
+    background-color: #00a8cc; /* Darker button */
+  }
+  
+  body.dark-mode #toggle-theme {
+    color: #f4f4f4; /* Light toggle icon */
+  }
+  
+  /* Glowing effect for the toggle button */
+  #toggle-theme:hover {
+    color: #00ccff;
+    text-shadow: 0 0 8px #00ccff, 0 0 10px #00ccff; /* Glowing effect */
+  }
+  
+  /* Button styles */
+  #toggle-theme {
+    background-color: transparent;
+    color: #111;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  /* Header - Optional, if you want more styling */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+  }
+  /* Ripple effect base */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple-animation 0.6s linear;
+    background-color: rgba(255, 255, 255, 0.5);
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  @keyframes ripple-animation {
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+
+  .results-container {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .movie-card {
+    display: flex;
+    flex-direction: row;
+    background: #222;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.4);
+    max-width: 800px;
+    width: 100%;
+    color: #fff;
+  }
+  
+  .movie-card img {
+    width: 250px;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .movie-details {
+    padding: 20px;
+  }
+  
+  .movie-details h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #00ccff;
+  }
+  
+  .error {
+    color: #ff4d4d;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .movie-card {
+    background-color: #222;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 204, 255, 0.5);
+    text-align: center;
+    margin-top: 2rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .movie-card img {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+  
